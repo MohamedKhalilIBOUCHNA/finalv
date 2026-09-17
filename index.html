@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#160F18">
+  <meta name="description" content="A private birthday surprise made with love for Fatima Ezzahra.">
+  <title>Happy Birthday, Fatima Ezzahra</title>
+
+  <!--
+    ================================================================
+    PERSONALISE HERE
+    Replace these values wherever they appear in this file and in script.js:
+    HER_NAME: Fatima Ezzahra | MY_NAME: khalil | BIRTHDAY: 18/09/2005
+    RELATIONSHIP_YEAR: 2023 | HER_NICKNAME: titimaa | SONG: kalimat
+    SPECIAL_PLACE: spot near to ensias | FAVOURITE_ACTIVITY: eating
+    The short birthday message and complete love letter are labelled below.
+    ================================================================
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Great+Vibes&amp;display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23160F18'/%3E%3Cpath d='M32 51S12 39 12 24c0-11 14-15 20-5 6-10 20-6 20 5 0 15-20 27-20 27Z' fill='%23E89AAA'/%3E%3Cpath d='M25 18c-5 0-9 4-9 9' fill='none' stroke='%23FFF7ED' stroke-width='3' stroke-linecap='round' opacity='.75'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="experience-locked">
+  <a class="skip-link" href="#home">Skip to the birthday surprise</a>
+
+  <!-- One-second loading experience -->
+  <div class="loading-screen" id="loadingScreen" role="status" aria-live="polite">
+    <div class="loading-heart" aria-hidden="true">♥</div>
+    <p>Putting your little surprise together…</p>
+  </div>
+
+  <!-- Opening birthday screen -->
+  <div class="entrance" id="entrance" aria-labelledby="entranceTitle" hidden>
+    <div class="entrance__glow entrance__glow--one" aria-hidden="true"></div>
+    <div class="entrance__glow entrance__glow--two" aria-hidden="true"></div>
+    <div class="entrance__card">
+      <div class="gift" id="openingGift" aria-hidden="true">
+        <span class="gift__lid"></span>
+        <span class="gift__box"></span>
+        <span class="gift__ribbon"></span>
+        <span class="gift__spark gift__spark--one">✦</span>
+        <span class="gift__spark gift__spark--two">♥</span>
+        <span class="gift__spark gift__spark--three">✧</span>
+      </div>
+      <p class="eyebrow">For Fatima Ezzahra · 18.09.2005</p>
+      <h1 id="entranceTitle">I Made You a<br>Little Something</h1>
+      <p class="entrance__message">I wanted to make you something you could open, smile at, and keep.</p>
+      <button class="button button--primary entrance__button" id="openSurpriseButton" type="button">
+        <span>Okay, show me</span>
+        <span aria-hidden="true">♥</span>
+      </button>
+      <p class="sound-hint"><span aria-hidden="true">♪</span> Sound on — our song is part of it.</p>
+    </div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Sticky navigation appears after the opening screen -->
+  <header class="site-header" id="siteHeader" hidden>
+    <nav class="navigation" aria-label="Main navigation">
+      <a class="navigation__brand" href="#home" aria-label="Birthday surprise home">
+        <span aria-hidden="true">♥</span>
+        <span>For Fatima</span>
+      </a>
+      <button class="navigation__toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navigationLinks" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="navigation__links" id="navigationLinks">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#photos">Photos</a>
+        <a class="nav-link" href="#quiz">Quiz</a>
+        <a class="nav-link" href="#coupons">Coupons</a>
+        <a class="nav-link" href="#letter">Letter</a>
+      </div>
+    </nav>
+  </header>
+
+  <button class="music-control" id="musicControl" type="button" aria-label="Play background music" hidden>
+    <span class="music-control__icon" aria-hidden="true">♪</span>
+    <span class="music-control__label">Music paused</span>
+  </button>
+  <audio id="backgroundMusic" preload="none" loop>
+    <source src="music/our-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <main class="site-main" id="siteMain" aria-hidden="true">
+    <!-- 1. Romantic hero -->
+    <section class="hero section" id="home" aria-labelledby="heroTitle">
+      <div class="hero__decor hero__decor--heart" aria-hidden="true">♥</div>
+      <div class="hero__decor hero__decor--star" aria-hidden="true">✦</div>
+      <div class="hero__decor hero__decor--orb" aria-hidden="true"></div>
+      <div class="hero__inner container">
+        <div class="hero__photo-wrap reveal reveal--left">
+          <div class="hero__frame">
+            <div class="image-shell image-shell--hero">
+              <div class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></div>
+              <img class="photo-rotate-ccw" src="images/hero-photo.jpg" alt="Fatima Ezzahra in a favourite photograph" data-fallback-image>
+            </div>
+            <span class="hero__tape hero__tape--left" aria-hidden="true"></span>
+            <span class="hero__tape hero__tape--right" aria-hidden="true"></span>
+          </div>
+          <p class="hero__date">18 September · my favourite birthday</p>
+        </div>
+
+        <div class="hero__copy reveal reveal--right">
+          <p class="eyebrow">For you, from me</p>
+          <h1 class="hero__title easter-egg-trigger" id="heroTitle" tabindex="0" role="button" aria-label="Happy Birthday, Fatima Ezzahra. A hidden surprise may be here.">
+            Happy Birthday,
+            <span>Fatima Ezzahra</span>
+          </h1>
+          <p class="hero__subtitle">It’s your day, so I made a whole little corner of the internet just for you.</p>
+
+          <!-- EDIT SHORT_BIRTHDAY_MESSAGE BELOW -->
+          <blockquote class="hero__message">“happy birthday titimaaaaa nchaelah idkhl elik bsseha osalama otfr7iiii oli tminitiih ijiik o ohibokiii bzaaaaf”</blockquote>
+
+          <p class="signature">Made by <strong>khalil</strong>, with a lot of love (and a little stress).</p>
+          <button class="button button--primary" type="button" data-scroll-to="#spotlight">Come see the rest <span aria-hidden="true">↓</span></button>
+          <div class="easter-egg" id="easterEgg" role="status" aria-live="polite" hidden>
+            <span aria-hidden="true">♥</span>
+            <p>Okay, you really clicked it five times. Secret: I’d still choose you in every version of this life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Birthday spotlight -->
+    <section class="spotlight section" id="spotlight" aria-labelledby="spotlightTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Okay, birthday girl</p>
+          <h2 id="spotlightTitle">Today Is All About You</h2>
+          <p>I know it’s just another date on the calendar, but it gave the world you, so I think it deserves a proper celebration. I hope this year is kind to you: calm mornings, exciting plans, moments that make you proud, and the kind of laughter where you can’t breathe properly.</p>
+        </div>
+
+        <div class="wish-card-grid">
+          <article class="wish-card reveal">
+            <span class="wish-card__icon" aria-hidden="true">♡</span>
+            <p class="wish-card__number">01</p>
+            <h3>For Your Heart</h3>
+            <p>I hope you always feel safe, understood, and properly cared for — especially with me.</p>
+          </article>
+          <article class="wish-card reveal">
+            <span class="wish-card__icon" aria-hidden="true">✦</span>
+            <p class="wish-card__number">02</p>
+            <h3>For Your Dreams</h3>
+            <p>I hope the things you talk about at 2 a.m. slowly turn into things you actually get to live.</p>
+          </article>
+          <article class="wish-card reveal">
+            <span class="wish-card__icon" aria-hidden="true">☼</span>
+            <p class="wish-card__number">03</p>
+            <h3>For Your Days</h3>
+            <p>More easy days, stupid jokes, good food, and little moments that catch you smiling.</p>
+          </article>
+        </div>
+
+        <div class="keepsake-strip reveal" aria-label="A few details from our world">
+          <div><span>Our soundtrack</span><strong>kalimat</strong></div>
+          <div><span>Our happy place</span><strong>spot near to ensias</strong></div>
+          <div><span>Our favourite plan</span><strong>eating</strong></div>
+          <div><span>Our chapter</span><strong>Since 2023</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Playful birthday question -->
+    <section class="birthday-question section" id="birthdayQuestion" aria-labelledby="questionTitle">
+      <div class="container container--narrow">
+        <div class="question-card reveal">
+          <div class="question-card__halo" aria-hidden="true"></div>
+          <p class="eyebrow">Quick question before we continue…</p>
+          <h2 id="questionTitle">Can we agree that, for today, the whole universe revolves around you?</h2>
+          <div class="question-actions" id="questionActions">
+            <button class="button button--primary" id="obviousAnswer" type="button">Yes, obviously</button>
+            <button class="button button--ghost proof-button" id="proofAnswer" type="button">I need proof</button>
+          </div>
+          <p class="interaction-response" id="questionResponse" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Polaroid photo gallery (not chronological) -->
+    <section class="gallery-section section" id="photos" aria-labelledby="galleryTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">A few photos I had to put here</p>
+          <h2 id="galleryTitle">Us, in Pictures</h2>
+          <p>No big story or perfect order. Just photos of us that I like a lot.</p>
+        </div>
+
+        <div class="polaroid-grid">
+          <button class="polaroid reveal" type="button" data-gallery-index="0" aria-label="Open photo 1: I’ve looked at this one way too many times.">
+            <span class="image-shell polaroid__image">
+              <span class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></span>
+              <img src="images/photo-1.jpg" alt="A cherished photograph of Fatima Ezzahra and khalil" data-fallback-image>
+            </span>
+            <span class="polaroid__caption">I’ve looked at this one way too many times.</span>
+          </button>
+          <button class="polaroid reveal" type="button" data-gallery-index="1" aria-label="Open photo 2: Two completely normal people behaving normally.">
+            <span class="image-shell polaroid__image">
+              <span class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></span>
+              <img class="photo-rotate-cw" src="images/photo-2.jpg" alt="A playful photograph of Fatima Ezzahra and khalil" data-fallback-image>
+            </span>
+            <span class="polaroid__caption">Two completely normal people behaving normally.</span>
+          </button>
+          <button class="polaroid reveal" type="button" data-gallery-index="2" aria-label="Open photo 3: I’m really glad we kept this moment.">
+            <span class="image-shell polaroid__image">
+              <span class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></span>
+              <img src="images/photo-3.jpg" alt="A meaningful shared moment with Fatima Ezzahra" data-fallback-image>
+            </span>
+            <span class="polaroid__caption">I’m really glad we kept this moment.</span>
+          </button>
+          <button class="polaroid reveal" type="button" data-gallery-index="3" aria-label="Open photo 4: Proof that you make every photo better.">
+            <span class="image-shell polaroid__image">
+              <span class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></span>
+              <img class="photo-rotate-cw" src="images/photo-4.jpg" alt="A beautiful portrait of Fatima Ezzahra" data-fallback-image>
+            </span>
+            <span class="polaroid__caption">Proof that you make every photo better.</span>
+          </button>
+          <button class="polaroid reveal" type="button" data-gallery-index="4" aria-label="Open photo 5: Just a photo, but it means a lot to me.">
+            <span class="image-shell polaroid__image">
+              <span class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></span>
+              <img src="images/photo-5.jpg" alt="A favourite memory shared by Fatima Ezzahra and khalil" data-fallback-image>
+            </span>
+            <span class="polaroid__caption">Just a photo, but it means a lot to me.</span>
+          </button>
+          <button class="polaroid reveal" type="button" data-gallery-index="5" aria-label="Open photo 6: We definitely need more pictures together.">
+            <span class="image-shell polaroid__image">
+              <span class="image-placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></span>
+              <img src="images/photo-6.jpg" alt="A future favourite photograph of Fatima Ezzahra and khalil" data-fallback-image>
+            </span>
+            <span class="polaroid__caption">We definitely need more pictures together.</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Quiz -->
+    <section class="quiz-section section" id="quiz" aria-labelledby="quizTitle">
+      <div class="container container--narrow">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Very serious research</p>
+          <h2 id="quizTitle">How Well Do You Know Us?</h2>
+          <p>Okay, let’s see how well you know our little world. No pressure… mostly.</p>
+        </div>
+
+        <div class="quiz-card reveal" id="quizCard">
+          <div class="quiz-card__topline">
+            <p id="quizCounter">Question 1 of 5</p>
+            <p id="quizScore" aria-live="polite">Score: 0</p>
+          </div>
+          <div class="quiz-progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="5" aria-valuenow="1">
+            <span id="quizProgressBar"></span>
+          </div>
+          <div id="quizQuestionView">
+            <h3 id="quizQuestion">Loading question…</h3>
+            <div class="quiz-options" id="quizOptions"></div>
+            <p class="quiz-feedback" id="quizFeedback" role="status" aria-live="polite"></p>
+            <button class="button button--primary quiz-next" id="nextQuestionButton" type="button" disabled>Next Question</button>
+          </div>
+          <div class="quiz-result" id="quizResult" hidden>
+            <span class="quiz-result__mark" aria-hidden="true">♥</span>
+            <p class="eyebrow">The very official results</p>
+            <h3 id="quizResultTitle">So… how did you do?</h3>
+            <p id="quizResultMessage"></p>
+            <p class="quiz-result__score" id="quizFinalScore"></p>
+            <button class="button button--primary" id="restartQuizButton" type="button">Restart Quiz</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Birthday coupons -->
+    <section class="coupon-section section" id="coupons" aria-labelledby="couponTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Things you can cash in later</p>
+          <h2 id="couponTitle">Birthday Privileges</h2>
+          <p>One gift didn’t feel like enough, so here are a few extras.</p>
+        </div>
+
+        <div class="coupon-grid">
+          <article class="coupon reveal" data-coupon-id="movie-night">
+            <span class="coupon__icon" aria-hidden="true">▶</span><span class="coupon__notch coupon__notch--top"></span><span class="coupon__notch coupon__notch--bottom"></span>
+            <p class="coupon__label">Birthday privilege 01</p><h3>Movie Night</h3><p>You pick the movie. I’ll try very hard not to complain about it.</p>
+            <button class="button button--coupon claim-coupon" type="button">Claim Coupon</button><span class="coupon__stamp" aria-hidden="true">Claimed</span>
+          </article>
+          <article class="coupon reveal" data-coupon-id="favourite-meal">
+            <span class="coupon__icon" aria-hidden="true">♨</span><span class="coupon__notch coupon__notch--top"></span><span class="coupon__notch coupon__notch--bottom"></span>
+            <p class="coupon__label">Birthday privilege 02</p><h3>Favourite Meal</h3><p>You choose what we eat, and I won’t let “anything” become a two-hour debate.</p>
+            <button class="button button--coupon claim-coupon" type="button">Claim Coupon</button><span class="coupon__stamp" aria-hidden="true">Claimed</span>
+          </article>
+          <article class="coupon reveal" data-coupon-id="phone-free-hour">
+            <span class="coupon__icon" aria-hidden="true">◌</span><span class="coupon__notch coupon__notch--top"></span><span class="coupon__notch coupon__notch--bottom"></span>
+            <p class="coupon__label">Birthday privilege 03</p><h3>Phone-Free Hour</h3><p>One full hour with both phones away. Just us, talking or doing absolutely nothing.</p>
+            <button class="button button--coupon claim-coupon" type="button">Claim Coupon</button><span class="coupon__stamp" aria-hidden="true">Claimed</span>
+          </article>
+          <article class="coupon reveal" data-coupon-id="surprise-date">
+            <span class="coupon__icon" aria-hidden="true">✦</span><span class="coupon__notch coupon__notch--top"></span><span class="coupon__notch coupon__notch--bottom"></span>
+            <p class="coupon__label">Birthday privilege 04</p><h3>Surprise Date</h3><p>I plan everything. You just show up and look pretty.</p>
+            <button class="button button--coupon claim-coupon" type="button">Claim Coupon</button><span class="coupon__stamp" aria-hidden="true">Claimed</span>
+          </article>
+          <article class="coupon reveal" data-coupon-id="argument-winner">
+            <span class="coupon__icon" aria-hidden="true">♛</span><span class="coupon__notch coupon__notch--top"></span><span class="coupon__notch coupon__notch--bottom"></span>
+            <p class="coupon__label">Birthday privilege 05</p><h3>Argument Winner</h3><p>You win one harmless argument automatically. Choose wisely because I will remember it.</p>
+            <button class="button button--coupon claim-coupon" type="button">Claim Coupon</button><span class="coupon__stamp" aria-hidden="true">Claimed</span>
+          </article>
+          <article class="coupon reveal" data-coupon-id="emergency-happiness">
+            <span class="coupon__icon" aria-hidden="true">☼</span><span class="coupon__notch coupon__notch--top"></span><span class="coupon__notch coupon__notch--bottom"></span>
+            <p class="coupon__label">Birthday privilege 06</p><h3>Emergency Happiness</h3><p>For any bad day: extra attention, comfort, and whatever might make it a little better.</p>
+            <button class="button button--coupon claim-coupon" type="button">Claim Coupon</button><span class="coupon__stamp" aria-hidden="true">Claimed</span>
+          </article>
+        </div>
+        <div class="coupon-reset-wrap reveal">
+          <button class="text-button" id="resetCouponsButton" type="button">Reset Coupons</button>
+          <p>The ones you claim will still be here when you come back.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Secret message -->
+    <section class="secret-section section" id="secret" aria-labelledby="secretTitle">
+      <div class="container container--narrow">
+        <div class="secret-box reveal" id="secretBox">
+          <div class="secret-seal" aria-hidden="true"><span>♥</span></div>
+          <p class="eyebrow">For titimaa only</p>
+          <h2 id="secretTitle">A Secret Message</h2>
+          <p>This one needs the secret word.</p>
+          <form class="secret-form" id="secretForm" novalidate>
+            <label for="secretPassword">Password</label>
+            <div class="secret-form__row">
+              <input id="secretPassword" name="secretPassword" type="password" autocomplete="off" aria-describedby="passwordHint passwordFeedback">
+              <button class="button button--primary" type="submit">Unlock Message</button>
+            </div>
+            <p class="form-hint" id="passwordHint">Hint: the name I always call you.</p>
+            <p class="form-feedback" id="passwordFeedback" role="status" aria-live="polite"></p>
+          </form>
+          <div class="secret-message" id="secretMessage" tabindex="-1" hidden>
+            <span aria-hidden="true">♥</span>
+            <p>You got it. I don’t need every day with you to be a big, special occasion. Even the normal days feel better when you’re there. I just hope this birthday becomes one of those days we remember later and smile about.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Love letter -->
+    <section class="letter-section section" id="letter" aria-labelledby="letterTitle">
+      <div class="container container--narrow">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Okay, this is the serious bit</p>
+          <h2 id="letterTitle">A Letter for You</h2>
+          <p>Open it whenever you feel ready.</p>
+        </div>
+
+        <div class="envelope-experience reveal" id="envelopeExperience">
+          <button class="envelope" id="envelopeButton" type="button" aria-expanded="false" aria-controls="letterPaper" aria-label="Open the birthday letter">
+            <span class="envelope__back"></span>
+            <span class="envelope__letter-preview"><span>For my titimaa</span><span>♥</span></span>
+            <span class="envelope__front-left"></span>
+            <span class="envelope__front-right"></span>
+            <span class="envelope__flap"></span>
+            <span class="envelope__seal">♥</span>
+          </button>
+
+          <article class="letter-paper" id="letterPaper" aria-hidden="true">
+            <div class="letter-paper__ornament" aria-hidden="true">❦</div>
+            <h3>Dear Fatima Ezzahra,</h3>
+
+            <!-- EDIT FULL_LOVE_LETTER BELOW -->
+            <p>3id milad sa3iiid mra okhraa titimaa lah idkhl elik had l3am bnaja7 ofala7 raki insana zwina li tstahl kolchi wlah wakha n3ya mangolha lk maghadich nwsfk bchno tsta79i bdebt raki insana raa2i3a wlh 9lbha bydd ojamilaaa ta flkharij hhh walaki raki fniwnaa dyali jamila I hope lgift t3jbk otnf3k otrj3i biha ajmal mea rassk fchambre otkhlik thssi brassk mzyan fach tkoni m9ada ch3orat odkchi hhh , wakha had lgift ana maghadich ga3 nstafd mnha haliyan tfo hhhh mss hny ela wditk obach i3jbk lhal hnyyy o sana7iiiilwa ya jamilaaaa sana7iiiilwa ya jamilaaaaaa</p>
+
+            <p class="letter-paper__closing">Happy birthday, my love.<br>I mean every word.<br><strong>khalil</strong> <span aria-hidden="true">♥</span></p>
+          </article>
+          <button class="button button--primary letter-toggle" id="letterToggleButton" type="button" aria-expanded="false">Open the Letter</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Birthday wish generator -->
+    <section class="wish-generator section" id="wishes" aria-labelledby="wishGeneratorTitle">
+      <div class="container container--narrow">
+        <div class="wish-generator__card reveal">
+          <span class="wish-generator__star wish-generator__star--one" aria-hidden="true">✦</span>
+          <span class="wish-generator__star wish-generator__star--two" aria-hidden="true">✧</span>
+          <p class="eyebrow">Because I’m not done yet</p>
+          <h2 id="wishGeneratorTitle">One More Birthday Wish</h2>
+          <div class="generated-wish" id="generatedWish" aria-live="polite">
+            <p>Press the button. I still have more wishes for you.</p>
+          </div>
+          <button class="button button--primary" id="generateWishButton" type="button">Give Me One</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Final birthday section -->
+    <section class="finale section" id="finale" aria-labelledby="finaleTitle">
+      <div class="finale__glow finale__glow--one" aria-hidden="true"></div>
+      <div class="finale__glow finale__glow--two" aria-hidden="true"></div>
+      <div class="container container--narrow finale__content reveal">
+        <div class="finale-heart" aria-hidden="true"><span>♥</span><i></i><i></i></div>
+        <p class="eyebrow">Okay, last thing</p>
+        <h2 id="finaleTitle">Happy Birthday, <span>Fatima Ezzahra</span></h2>
+        <p>The website ends here, but obviously I’m not done wishing good things for you. I hope today makes you properly happy, and I hope this next year gives you a lot to smile about.</p>
+        <p>Thank you for being in my life. Really.</p>
+        <p class="finale__signature">Very lucky to have you,<br><strong>khalil</strong> <span aria-label="heart">❤️</span></p>
+        <div class="finale__actions">
+          <button class="button button--primary" type="button" data-scroll-to="#letter">Read My Letter Again</button>
+          <button class="button button--ghost" type="button" data-scroll-to="#home">Back to the Start</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <button class="back-to-top" id="backToTopButton" type="button" aria-label="Back to top" hidden>↑</button>
+
+  <!-- Gallery lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightboxCaption" hidden>
+    <div class="lightbox__backdrop" data-close-lightbox></div>
+    <div class="lightbox__dialog">
+      <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close photograph">×</button>
+      <button class="lightbox__nav lightbox__nav--previous" id="lightboxPrevious" type="button" aria-label="Previous photograph">‹</button>
+      <figure class="lightbox__figure">
+        <div class="lightbox__image-shell">
+          <div class="image-placeholder lightbox__placeholder" aria-hidden="true"><span>▧</span><small>Our photo</small></div>
+          <img id="lightboxImage" src="" alt="">
+        </div>
+        <figcaption id="lightboxCaption"></figcaption>
+      </figure>
+      <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Next photograph">›</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
